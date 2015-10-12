@@ -1,0 +1,12 @@
+machine:
+    python:
+        version: 3.5.0
+dependencies:
+    pre:
+        - pip install -r requirements/dev.txt
+
+test:
+    override:
+        - python sandbox/manage.py test circleci_test
+    post:
+        - mv cover $CIRCLE_ARTIFACTS
