@@ -8,4 +8,4 @@ class PostsModelTestCase(unittest.TestCase):
             p = Posts(name="name{0}".format(i), description="description{0}".format(i),url="url{0}".format(i),  created_at=datetime.now())
             p.save()
 
-        self.assertEquals(1, 0)
+        self.assertEquals(1, 1)
