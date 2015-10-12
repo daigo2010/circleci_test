@@ -4,6 +4,8 @@ machine:
 dependencies:
     pre:
         - docker build -t circleci_test:latest .
+    override:
+        - echo "Avoid pip install"
 test:
     override:
         - docker run circleci_test:latest python manage.py test circleci_test
