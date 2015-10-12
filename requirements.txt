@@ -1,3 +1,1 @@
 django
-coverage
-django-nose

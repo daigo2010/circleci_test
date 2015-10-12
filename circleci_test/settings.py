@@ -38,7 +38,6 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'circleci_test',
-    'django_nose',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -102,11 +101,3 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
-
-# test
-TEST_RUNNER = 'django_nose.NoseTestSuiteRunner' 
-NOSE_ARGS = [
-    '--with-coverage',
-    '--cover-html',
-    '--cover-package=circleci_test',
-]
