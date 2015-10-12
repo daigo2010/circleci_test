@@ -1,12 +1,9 @@
 machine:
-    python:
-        version: 3.5.0
+    services:
+        - docker
 dependencies:
     pre:
-        - pip install -r requirements/dev.txt
-
+        - docker build -t circleci_test:latest .
 test:
     override:
-        - python sandbox/manage.py test circleci_test
-    post:
-        - mv cover $CIRCLE_ARTIFACTS
+        - docker run circleci_test:latest python manage.py test circleci_test
